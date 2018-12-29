@@ -1,0 +1,10 @@
+TO DO
+-DOCUMENT
+-Option to remove output of lists and list sizes?
+
+TO DO IF TIME ALLOWS
+-Optimize word family choice algorithm
+-Menu to toggle options
+ * Toggle word count
+ * Toggle word list output
+ * Quit option
