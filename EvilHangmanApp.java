@@ -111,8 +111,7 @@ public class EvilHangmanApp
 
   }
 
-  private static int getWordLength()
-  {
+  private static int getWordLength(){
     int input = -1;
     Scanner keyboard = new Scanner(System.in);
 
@@ -127,8 +126,7 @@ public class EvilHangmanApp
     return input;
   }
 
-  private static int getGuesses()
-  {
+  private static int getGuesses(){
     Scanner keyboard = new Scanner(System.in);
     int guesses = 0;
 
@@ -145,8 +143,7 @@ public class EvilHangmanApp
   * Prompts the user to enter if they would like to see a running count
   * off the number of words still in the word list.
   */
-  private static boolean setShowCount()
-  {
+  private static boolean setShowCount(){
     Scanner keyboard = new Scanner(System.in);
     String input = "";
 
@@ -167,13 +164,11 @@ public class EvilHangmanApp
       return false;
   }
 
-  private static boolean toggleShowCount(boolean currentState)
-  {
+  private static boolean toggleShowCount(boolean currentState){
     return !currentState;
   }
 
-  private static void outputLoseMessage(Hashtable<String,String> wordList)
-  {
+  private static void outputLoseMessage(Hashtable<String,String> wordList){
     String chosenWord = "";
     Enumeration<String> words = wordList.keys();
     Random picker = new Random();
@@ -191,8 +186,7 @@ public class EvilHangmanApp
   * wordList methods for creating, editing, reading, and displaying word list
   */
 
-  private static Hashtable<String, String> generateStartingList(int length)
-  {
+  private static Hashtable<String, String> generateStartingList(int length){
     Hashtable<String, String> wordList = new Hashtable<String, String>(120000);
     String mask = "";
     File dictionary = new File("dictionary.txt");
@@ -221,8 +215,7 @@ public class EvilHangmanApp
     return wordList;
   }
 
-  private static void printWordList(Hashtable<String, String> list)
-  {
+  private static void printWordList(Hashtable<String, String> list){
     Enumeration<String> keys = list.keys();
     Enumeration<String> vals = list.elements();
     while(keys.hasMoreElements())
@@ -236,8 +229,7 @@ public class EvilHangmanApp
   * in the masked words (values). This will allow us to easily determine their family
   * using the .equals method.
   */
-  private static void updateWordMasks(Hashtable<String, String> list, char c)
-  {
+  private static void updateWordMasks(Hashtable<String, String> list, char c){
     Enumeration<String> words = list.keys();
     Enumeration<String> masks = list.elements();
     while(words.hasMoreElements())
@@ -263,29 +255,25 @@ public class EvilHangmanApp
     }
   }
 
-  private static String chooseNewMask(Hashtable<String, String> list, String currentMask)
-  {
+  private static String chooseNewMask(Hashtable<String, String> list, String currentMask){
     //Find all word families and count elements
     Enumeration<String> masks = list.elements();
     ArrayList<String> families = new ArrayList<String>();
     int max = 0;
     String nextMask = "";
 
-    while(masks.hasMoreElements())
-    {
+    while(masks.hasMoreElements()){
       String wordMask = masks.nextElement();
       if(!families.contains(wordMask))
         families.add(wordMask);
     }
 
-    for(int i = 0; i < families.size(); i++)
-    {
+    for(int i = 0; i < families.size(); i++){
       masks = list.elements();
       int count = 0;
 
       //Count wordMasks that equal family at i
-      while(masks.hasMoreElements())
-      {
+      while(masks.hasMoreElements()){
         if(masks.nextElement().equals(families.get(i)))
           count++;
       }
@@ -295,8 +283,7 @@ public class EvilHangmanApp
 
       //if count is higher than current max
       //update max and nexttMask
-      if(count > max)
-      {
+      if(count > max){
         max = count;
         nextMask = families.get(i);
       }
@@ -304,8 +291,7 @@ public class EvilHangmanApp
 
     //Remove non matched words
     Enumeration<String> words = list.keys();
-    while(words.hasMoreElements())
-    {
+    while(words.hasMoreElements()){
       String word = words.nextElement();
       if(!list.get(word).equals(nextMask))
         list.remove(word);
@@ -315,24 +301,21 @@ public class EvilHangmanApp
     return nextMask;
   }
 
-private class Family
-{
-    String mask;
+private class Family{
+    String pattern;
     int size;
 
-    public Family(String newMask, int newSize)
-    {
-      this.mask = newMask;
+    public Family(String newPattern, int newSize){
+      this.pattern = newPattern;
       this.size = newSize;
     }
 
-    public void setSize(int newSize)
-    {
+    public void setSize(int newSize){
       this.size = newSize;
     }
 
-    public String getMask(){
-      return this.mask;
+    public String getPattern(){
+      return this.pattern;
     }
 
     public int getSize(){
@@ -341,5 +324,4 @@ private class Family
 
     //
 }
-
 }
