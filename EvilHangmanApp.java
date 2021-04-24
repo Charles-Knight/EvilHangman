@@ -232,8 +232,8 @@ public class EvilHangmanApp
   private static void updateWordMasks(Hashtable<String, String> list, char c){
     Enumeration<String> words = list.keys();
     Enumeration<String> masks = list.elements();
-    while(words.hasMoreElements())
-    {
+    
+    while(words.hasMoreElements()){
       String word = words.nextElement();
       String wordMask = masks.nextElement();
       String newMask = "";
