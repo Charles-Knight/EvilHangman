@@ -16,7 +16,7 @@ public class GameWord {
     return this.word[position].isFound();
   }
 
-  public boolean wordFound() {
+  public boolean isFound() {
     for (WordPosition pos : this.word) {
       if (!pos.isFound()) {
         return false;
