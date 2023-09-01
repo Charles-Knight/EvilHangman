@@ -8,10 +8,6 @@ public class GameWord {
     }
   }
 
-  public WordPosition at(int position) {
-    return this.word[position];
-  }
-
   public boolean positionIsFound(int position) {
     return this.word[position].isFound();
   }
