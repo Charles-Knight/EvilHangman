@@ -9,7 +9,10 @@ public class HangmanGamePlayer {
     while (!game.isOver()) {
       System.out.println("Enter a letter: ");
       char guess = keyboard.next().toLowerCase().charAt(0);
-      game.playerGuess(guess);
+      boolean guessAccepted = game.playerGuess(guess);
+      if (!guessAccepted) {
+        System.out.println("You already played that letter.");
+      }
     }
 
     if (game.isWon()) {

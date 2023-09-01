@@ -20,10 +20,9 @@ public class FairHangman {
     this.gameWon = false;
   }
 
-  public void playerGuess(char guess) {
+  public boolean playerGuess(char guess) {
     if (guessedLetters.contains(guess)) {
-      // Move this to player class
-      System.out.println("You already guessed this letter");
+      return false;
     } else {
       guessedLetters.add(guess);
       int positionsFound = gameWord.evaluate(guess);
@@ -31,6 +30,7 @@ public class FairHangman {
         missedGuesses++;
       }
       this.evaluateGameOver();
+      return true;
     }
   }
 

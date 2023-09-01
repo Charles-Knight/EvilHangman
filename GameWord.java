@@ -20,8 +20,7 @@ public class GameWord {
     int positionsFound = 0;
 
     for (WordPosition pos : this.word) {
-      pos.evaluate(guess);
-      if (pos.isFound()) {
+      if (pos.evaluate(guess)) {
         positionsFound++;
       }
     }

@@ -10,8 +10,9 @@ public class WordPosition {
   public boolean evaluate(char guessedChar) {
     if (this.character == guessedChar) {
       this.found = true;
+      return true;
     }
-    return this.found;
+    return false;
   }
 
   public boolean isFound() {
