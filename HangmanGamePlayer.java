@@ -22,5 +22,6 @@ public class HangmanGamePlayer {
       System.out.println("Game Over. You have lost. The word was " + game.getCurrentWord() + ".");
     }
 
+    keyboard.close();
   }
 }
