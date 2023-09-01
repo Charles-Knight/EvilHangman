@@ -7,6 +7,7 @@ public class HangmanGamePlayer {
     FairHangman game = new FairHangman("abc", 3);
 
     while (!game.isOver()) {
+      System.out.println(game.getCurrentWord());
       System.out.println("Enter a letter: ");
       char guess = keyboard.next().toLowerCase().charAt(0);
       boolean guessAccepted = game.playerGuess(guess);
@@ -16,9 +17,9 @@ public class HangmanGamePlayer {
     }
 
     if (game.isWon()) {
-      System.out.println("Game is over. You have won!");
+      System.out.println("Congratulations! You have won!");
     } else {
-      System.out.println("Game is over. You have lost. : (");
+      System.out.println("Game Over. You have lost. The word was " + game.getCurrentWord() + ".");
     }
 
   }

@@ -32,6 +32,14 @@ public class FairHangman {
     }
   }
 
+  public String getCurrentWord() {
+    if (this.isOver()) {
+      return this.gameWord.toString();
+    } else {
+      return this.gameWord.foundLetters();
+    }
+  }
+
   public boolean isOver() {
     return this.gameOver;
   }

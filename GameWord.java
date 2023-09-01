@@ -35,4 +35,24 @@ public class GameWord {
     }
     return true;
   }
+
+  public String foundLetters() {
+    String word = "";
+    for (WordPosition pos : this.word) {
+      if (pos.isFound()) {
+        word = word + pos.value();
+      } else {
+        word = word + "_";
+      }
+    }
+    return word;
+  }
+
+  public String toString() {
+    String word = "";
+    for (WordPosition pos : this.word) {
+      word = word + pos.value();
+    }
+    return word;
+  }
 }
