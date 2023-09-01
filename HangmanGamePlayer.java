@@ -7,7 +7,8 @@ public class HangmanGamePlayer {
     FairHangman game = new FairHangman("abc");
 
     while (!game.isOver()) {
-      System.out.println(game.getCurrentWord());
+      System.out.println("Word: " + game.getCurrentWord() + " - Errors:" + game.getMissedGuesses() + "/"
+          + game.getMaxMissedGuesses() + " - Guesses: " + game.getGuessedLetters());
       System.out.println("Enter a letter: ");
       char guess = keyboard.next().toLowerCase().charAt(0);
       boolean guessAccepted = game.playerGuess(guess);

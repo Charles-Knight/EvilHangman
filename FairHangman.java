@@ -36,6 +36,18 @@ public class FairHangman {
     }
   }
 
+  public int getMaxMissedGuesses() {
+    return this.maxMissedGuesses;
+  }
+
+  public int getMissedGuesses() {
+    return this.missedGuesses;
+  }
+
+  public String getGuessedLetters() {
+    return this.guessedLetters.toString();
+  }
+
   public String getCurrentWord() {
     if (this.isOver()) {
       return this.gameWord.toString();
