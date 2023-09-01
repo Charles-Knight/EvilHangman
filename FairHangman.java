@@ -1,6 +1,4 @@
-import java.io.File;
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 public class FairHangman {
@@ -49,7 +47,5 @@ public class FairHangman {
     } else {
       this.gameOver = this.missedGuesses >= this.maxMissedGuesses;
     }
-
   }
-
 }
