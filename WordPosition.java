@@ -7,8 +7,11 @@ public class WordPosition {
     this.found = false;
   }
 
-  public void evaluate(char guessedChar) {
-    this.found = this.character == guessedChar ? true : false;
+  public boolean evaluate(char guessedChar) {
+    if (this.character == guessedChar) {
+      this.found = true;
+    }
+    return this.found;
   }
 
   public boolean isFound() {

@@ -16,6 +16,18 @@ public class GameWord {
     return this.word[position].isFound();
   }
 
+  public int evaluate(char guess) {
+    int positionsFound = 0;
+
+    for (WordPosition pos : this.word) {
+      pos.evaluate(guess);
+      if (pos.isFound()) {
+        positionsFound++;
+      }
+    }
+    return positionsFound;
+  }
+
   public boolean isFound() {
     for (WordPosition pos : this.word) {
       if (!pos.isFound()) {

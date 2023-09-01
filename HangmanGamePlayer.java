@@ -1,11 +1,15 @@
+import java.util.Scanner;
+
 public class HangmanGamePlayer {
 
   public static void main(String[] args) {
-    FairHangman game = new FairHangman("test", 3);
+    Scanner keyboard = new Scanner(System.in);
+    FairHangman game = new FairHangman("abc", 3);
 
     while (!game.isOver()) {
-      System.out.println("Game is still not over.");
-      game.playerGuess('a');
+      System.out.println("Enter a letter: ");
+      char guess = keyboard.next().toLowerCase().charAt(0);
+      game.playerGuess(guess);
     }
 
     if (game.isWon()) {

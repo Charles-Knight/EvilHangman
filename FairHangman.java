@@ -1,10 +1,13 @@
 import java.io.File;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class FairHangman {
   private GameWord gameWord;
   private int missedGuesses;
   private int maxMissedGuesses;
+  private Set<Character> guessedLetters;
   private boolean gameOver;
   private boolean gameWon;
 
@@ -12,14 +15,23 @@ public class FairHangman {
     this.gameWord = new GameWord(word);
     this.maxMissedGuesses = maxMissedGuesses;
     this.missedGuesses = 0;
+    this.guessedLetters = new HashSet<Character>();
     this.gameOver = false;
     this.gameWon = false;
   }
 
   public void playerGuess(char guess) {
-    System.out.println("This feature not yet implemented. Guess NOT recorded.");
-    this.missedGuesses++;
-    this.evaluateGameOver();
+    if (guessedLetters.contains(guess)) {
+      // Move this to player class
+      System.out.println("You already guessed this letter");
+    } else {
+      guessedLetters.add(guess);
+      int positionsFound = gameWord.evaluate(guess);
+      if (positionsFound < 1) {
+        missedGuesses++;
+      }
+      this.evaluateGameOver();
+    }
   }
 
   public boolean isOver() {
