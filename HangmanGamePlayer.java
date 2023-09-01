@@ -1,10 +1,14 @@
+import java.io.File;
+import java.util.HashSet;
+import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
 public class HangmanGamePlayer {
 
   public static void main(String[] args) {
     Scanner keyboard = new Scanner(System.in);
-    FairHangman game = new FairHangman("abc");
+    FairHangman game = new FairHangman(selectWord());
 
     while (!game.isOver()) {
       System.out.println("Word: " + game.getCurrentWord() + " - Errors:" + game.getMissedGuesses() + "/"
@@ -24,5 +28,28 @@ public class HangmanGamePlayer {
     }
 
     keyboard.close();
+  }
+
+  // TODO: Better handle selection of word, input of dictionary file, etc...
+  private static String selectWord() {
+    int minWordSize = 7;
+    Set<String> wordList = new HashSet<String>();
+    File dictionary = new File("dictionary.txt");
+    try {
+      Scanner inputFile = new Scanner(dictionary);
+      while (inputFile.hasNext()) {
+        String word = inputFile.next();
+        if (word.length() >= minWordSize) {
+          wordList.add(word);
+        }
+      }
+      int selectedIndex = new Random().nextInt(wordList.size());
+      return wordList.toArray()[selectedIndex].toString();
+    } catch (Exception E) {
+      System.out.println("Something went wrong. Perhaps the dictionary file is missing.");
+    }
+    // Add real error handling?
+    // On error the string is error
+    return "error";
   }
 }
