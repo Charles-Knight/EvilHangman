@@ -44,6 +44,7 @@ public class HangmanGamePlayer {
         }
       }
       int selectedIndex = new Random().nextInt(wordList.size());
+      inputFile.close();
       return wordList.toArray()[selectedIndex].toString();
     } catch (Exception E) {
       System.out.println("Something went wrong. Perhaps the dictionary file is missing.");
