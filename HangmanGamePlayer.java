@@ -4,7 +4,7 @@ public class HangmanGamePlayer {
 
   public static void main(String[] args) {
     Scanner keyboard = new Scanner(System.in);
-    FairHangman game = new FairHangman("abc", 3);
+    FairHangman game = new FairHangman("abc");
 
     while (!game.isOver()) {
       System.out.println(game.getCurrentWord());

@@ -9,6 +9,10 @@ public class FairHangman {
   private boolean gameOver;
   private boolean gameWon;
 
+  public FairHangman(String word) {
+    this(word, 7);
+  }
+
   public FairHangman(String word, int maxMissedGuesses) {
     this.gameWord = new GameWord(word);
     this.maxMissedGuesses = maxMissedGuesses;
