@@ -1,3 +1,5 @@
+package com.github.charlesknight;
+
 import java.util.Hashtable;
 import java.util.ArrayList;
 import java.util.Scanner;

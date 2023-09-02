@@ -1,3 +1,5 @@
+package com.github.charlesknight;
+
 public class GameWord {
   private WordPosition[] word;
 

@@ -1,3 +1,5 @@
+package com.github.charlesknight;
+
 public class WordPosition {
   private char character;
   private boolean found;
