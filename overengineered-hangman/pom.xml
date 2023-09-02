@@ -54,7 +54,7 @@
           <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>com.github.charlesknight.App</mainClass>
+                        <mainClass>com.github.charlesknight.HangmanGamePlayer</mainClass>
                     </manifest>
                 </archive>
             </configuration>
