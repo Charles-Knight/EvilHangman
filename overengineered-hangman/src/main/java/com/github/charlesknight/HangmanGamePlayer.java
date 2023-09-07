@@ -1,6 +1,9 @@
 package com.github.charlesknight;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
@@ -36,9 +39,10 @@ public class HangmanGamePlayer {
   private static String selectWord() {
     int minWordSize = 7;
     Set<String> wordList = new HashSet<String>();
-    File dictionary = new File("dictionary.txt");
+    InputStream dictionaryFile = HangmanGamePlayer.class.getResourceAsStream("/dictionary.txt");
+
     try {
-      Scanner inputFile = new Scanner(dictionary);
+      Scanner inputFile = new Scanner(dictionaryFile);
       while (inputFile.hasNext()) {
         String word = inputFile.next();
         if (word.length() >= minWordSize) {
