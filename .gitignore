@@ -1,3 +1,4 @@
 overengineered-hangman/target/
+hangman-cmd/target/
 *.class
 *.pdf
