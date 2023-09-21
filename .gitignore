@@ -1,4 +1,5 @@
 overengineered-hangman/target/
 hangman-cmd/target/
+.vscode/
 *.class
 *.pdf
