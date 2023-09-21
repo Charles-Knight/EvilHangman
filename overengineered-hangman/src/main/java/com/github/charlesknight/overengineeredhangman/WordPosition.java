@@ -1,4 +1,4 @@
-package com.github.charlesknight;
+package com.github.charlesknight.overengineeredhangman;
 
 public class WordPosition {
   private char character;
