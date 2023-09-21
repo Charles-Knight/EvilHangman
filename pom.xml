@@ -8,7 +8,7 @@
       <packaging>pom</packaging>
      
       <modules>
-        <module>hangman-cmd</module>
         <module>overengineered-hangman</module>
+        <module>hangman-cmd</module>
       </modules>
     </project>

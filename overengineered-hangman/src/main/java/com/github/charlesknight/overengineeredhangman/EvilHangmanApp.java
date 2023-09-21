@@ -1,4 +1,4 @@
-package com.github.charlesknight;
+package com.github.charlesknight.overengineeredhangman;
 
 import java.util.Hashtable;
 import java.util.ArrayList;
