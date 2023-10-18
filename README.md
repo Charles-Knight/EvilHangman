@@ -1,5 +1,17 @@
 # Overengineered Hangman
-An overengineered set of Hangman games that server as a simple set of programs to experiment with programming in Java.
+An overengineered set of Hangman games that serve as a simple set of programs to experiment with programming in Java.
+
+## Usage
+This is a work in progress, the game can be run either natively on a system with the JRE installed or from a Docker container. A high level overview of the current usage is shown for both methods.
+
+### JRE/JDK
+1. Build the .jar file with maven.
+2. Run the .jar file: `java -cp hangman-cmd-1.0-SNAPSHOT-jar-with-dependencies.jar com.github.charlesknight.HangmanCMD`
+
+### Docker
+1. Build the .jar file with Maven
+2. Build the Docker container: run `docker build -t hangman-cmd .` from `/hangman-cmd`
+3. Run the Docker Container : run `docker run -i hangman-cmd`
 
 ## Fair Hangman
 A simple Hangman game, inspired by the original project, which will be used to experiment with and refresh on programming in Java.
